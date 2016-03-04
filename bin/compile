@@ -9,17 +9,19 @@ PROFILE=${BUILD_PATH}/.profile.d
 #
 #
 
-echo "------> PATH"
+echo "------> Working directory"
 echo $BUILD_DIR
+
+echo "------> Add PATH"
 echo $PATH
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-echo "------> Downloading LevelDB"
+echo "------> Downloading"
 cd $BUILD_DIR
 wget https://leveldb.googlecode.com/files/leveldb-1.9.0.tar.gz
 tar -xzf leveldb-1.9.0.tar.gz
 
-echo "------> Making LevelDB"
+echo "------> Making"
 cd leveldb-1.9.0
 make
 
@@ -28,7 +30,7 @@ mkdir $BUILD_DIR/.heroku/vendor/lib
 mkdir $BUILD_DIR/.heroku/vendor/include
 mv libleveldb.* $BUILD_DIR/.heroku/vendor
 
-echo "------> Setting LevelDB"
+echo "------> Setting"
 cd include
 cp -R leveldb   $BUILD_DIR/.heroku/vendor/include
 ldconfig # ldconfig: command not found
