@@ -23,7 +23,7 @@ mkdir -p $BUILD_DIR/.heroku/vendor/leveldb
 mkdir $BUILD_DIR/.heroku/vendor/lib
 mkdir $BUILD_DIR/.heroku/vendor/include
 
-mv libleveldb.* $BUILD_DIR/.heroku/vendor/lib
+mv libleveldb.* $BUILD_DIR/.heroku/vendor
 cp -R leveldb   $BUILD_DIR/.heroku/vendor/include
 
 ldconfig
